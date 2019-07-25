@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    linux下hexo安装 | Haitao Space
+  </title>
+  <meta name="description" content="Stay hungry, stay foolish.">
+  
+  <meta name="keywords" content="
+  hexo
+  ">
+  
+  <meta name="author" content="haitaoW">
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://ws1.sinaimg.cn/large/006VKYWFly1g5b0lv0x0qj30rs0mn4gt.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 3 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 3 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Haitao Space</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    haitaoW
+
+    <span class="post-date float-right" title="{{moment(1563936441000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1563936441000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>linux下hexo安装</h1>
+    <blockquote>
+<p>在暑期学校最后阶段几个大佬分享经验的过程中都提到了写博客的问题,之前自己也折腾了各种写博客的方式,尝试了很多markdown的编辑器,此外,临近研三,也越来越发现学过的知识,整理与归档的重要性,所以,博客写给自己看.</p>
+</blockquote>
+<p> hexo是由Nodes支持的一个博客框架,关于使用hexo搭建的博客也越来越多,有很多的教程了,参考链接上有给出作为进一步的参考.</p>
+<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>安装的过程主要参考网址1, 该其中详细的列举了linux系统下安装的Node.js的几种方法. 关于在ubutun下的安装大 大多数相关教程都说道采用 <code>apt-get</code> 但是安装的过程中经常性的安装失败.所以在此建议采用源码编译的方式安装</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo git clone https:<span class="comment">//github.com/nodejs/node.git </span></span><br><span class="line"><span class="comment">//修改目录权限：</span></span><br><span class="line">sudo chmod -R <span class="number">755</span> node</span><br><span class="line"><span class="comment">//使用 ./configure 创建编译文件，并编译安装</span></span><br><span class="line">cd node</span><br><span class="line">sudo ./configure</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后 使用<code>node -v</code> 检查是否安装成功.</p>
+<h4 id="安装与初始化hexo"><a href="#安装与初始化hexo" class="headerlink" title="安装与初始化hexo"></a>安装与初始化hexo</h4><p>根据hexo官方文档与github上的指令提示,这个步骤应该比较简单.</p>
+<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g //这个步骤需要翻墙</span><br></pre></td></tr></table></figure>
+
+<h6 id="hexo常用指令"><a href="#hexo常用指令" class="headerlink" title="hexo常用指令"></a>hexo常用指令</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog                      <span class="comment">//会在当前目录下建立一个新的名为blog的文件夹</span></span><br><span class="line">hexo server                        <span class="comment">//在本地生成服务器文件,</span></span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">"Hello Hexo"</span>             <span class="comment">//新建blog "Hello Hexo"是新blog 的名字</span></span><br><span class="line">hexo generate                    <span class="comment">//生成静态文件</span></span><br><span class="line">hexo d                           <span class="comment">//在gitbub 上部署,相当于上传本地文件吧</span></span><br><span class="line">hexo clean                       <span class="comment">//清楚之前的缓存文件</span></span><br></pre></td></tr></table></figure>
+
+<p>将博客与hexo 官网上面讲的都比较清楚了，操作起来也比较简单，在此就不赘述。需要注意的是: </p>
+<ol>
+<li>在安装的过程中需要科学上网.  </li>
+<li>在不是root 权限的的时候执行安装命令  需要加上sudo</li>
+</ol>
+<h4 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h4><p>这一部分和网上大部分的教程都是一样的，主要分为以下几个步骤。此处可以参照参考网址3</p>
+<ol>
+<li>在github上新建立仓储 username.github.io</li>
+<li>npm install hexo-deployer-git –save 在本地安装git部署</li>
+<li>依次运行 <code>hexo g</code>    <code>hexo d</code>  </li>
+<li>在username.github.io 这个网页链接上,看到初始版本的样子。</li>
+</ol>
+<p>此外这里记录通过Rsync 部署到VPS 的链接以备用：</p>
+<ol>
+<li><a href="https://sh.alynx.moe/posts/Hexo-on-VPS-with-Nginx-and-HTTPS/" target="_blank" rel="noopener">https://sh.alynx.moe/posts/Hexo-on-VPS-with-Nginx-and-HTTPS/</a></li>
+<li><a href="http://blog.clannadbred.com/2017/10/28/使用Hexo和Nginx搭建属于自己的博客网站/" target="_blank" rel="noopener">http://blog.clannadbred.com/2017/10/28/%E4%BD%BF%E7%94%A8Hexo%E5%92%8CNginx%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</a></li>
+</ol>
+<h4 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h4><p>比较注明的主题就是next，用的人多，而且坑少，关于next的主题其官网（网址4）讲的就很好了。 此外另外两个也比较推荐：1.<a href="https://github.com/sabrinaluo/hexo-theme-replica" target="_blank" rel="noopener">https://github.com/sabrinaluo/hexo-theme-replica</a> ；2. <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a>  。我用的是replica。关于这个主题作者已经在github上面讲的比较好，我列举我踩到的坑。</p>
+<ol>
+<li>在静态本地下是正常的，部署到github上之后网页显示乱码。大概率是因为在配置文件的#URL那一栏中进行了root分类。（这个折腾了好久好久）</li>
+<li>在建立分类与tag 的时候，可以先建立.txt文件，在更改成.md，这样能够大概率的避免markdown输入情况下的格式出错。</li>
+</ol>
+<h4 id="参考网址"><a href="#参考网址" class="headerlink" title="参考网址:"></a>参考网址:</h4><p>网址1:  <a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">https://www.runoob.com/nodejs/nodejs-install-setup.html</a></p>
+<p>网址2 : <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
+<p>网址3:  <a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35668237</a></p>
+<p>网址4:  <a href="https://theme-next.iissnan.com/getting-started.html#install-next-theme" target="_blank" rel="noopener">https://theme-next.iissnan.com/getting-started.html#install-next-theme</a></p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://haitao926.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 haitaoW</li>
+      <li><a href="https://haitao926.github.io">Home</a></li>
+      
+      <li><a href="https://github.com/haitao926">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

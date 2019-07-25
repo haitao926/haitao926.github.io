@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    ROS的IDE们 | Haitao Space
+  </title>
+  <meta name="description" content="Stay hungry, stay foolish.">
+  
+  <meta name="keywords" content="
+  ROS
+  ">
+  
+  <meta name="author" content="haitaoW">
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://ws1.sinaimg.cn/large/006VKYWFly1g5b0lv0x0qj30rs0mn4gt.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 3 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 3 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Haitao Space</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    haitaoW
+
+    <span class="post-date float-right" title="{{moment(1564057850000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1564057850000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>ROS的IDE们</h1>
+    <blockquote>
+<p>从研一接触ROS到现在, 一直在被两件是折腾着, 1.怎么编译, 2. 怎么degug.一开始用的roboware, 能够自动添加CMakeLists,  一些小动能如自动启动launch文件等.  后来开源了但是也不更新了,  自身有些bug也没能修复.</p>
+</blockquote>
+<p>关于IDE ros.wiki[1] 上由列举如: Eclipse，qtcreat, kDevelop, vscode, roboware，Clion等。在answers.ros [2]上面关于IDE的讨论，最后题主选择的是Eclipse。我就我尝试的使用过的IDE进行简单的总结，目前我使用的是qtcreator，与Clion。</p>
+<h3 id="kDevelop-vscode"><a href="#kDevelop-vscode" class="headerlink" title="kDevelop ,vscode"></a>kDevelop ,vscode</h3><p>kDevelop 与vscode 都是开源免费软件，其中vscode平时看代码用的很多，而且跨平台，另提供了关于ROS 的插件，但遗憾的是不能调试，github上有人给出了关于调试的方法，大致思路如下，具体没有尝试：</p>
+<ol>
+<li>启动ros，运行节点；</li>
+<li>查看当前进程号，然后在launch文件中修改原本调试进程为当前运行进程.</li>
+</ol>
+<h3 id="qtcreator"><a href="#qtcreator" class="headerlink" title="qtcreator"></a>qtcreator</h3><p>qt提供了ros的插件，而且有详细的wiki[3]。 其本身又是跨平台的软件。在ros中做UI的时候用qt，在创客智造中有详细的关于如何在linux下安装qt 关于ros插件的教程，关于编译配置方法也讲述的比较详细，但是在debug的过程中还是出了问题.然后换了一个方法，这个的思路和vscode 中调试的方法本质应该是一样的．</p>
+<p>qt 编译环境配置好之后，可以选择已经启动的节点进行调试，以及未启动的节点进行调试。我采用的通常是先启动节点。具体步骤如下：</p>
+<ol>
+<li>启动roscore,运行需要调试节点；</li>
+<li>qt 工具栏选择　debug -&gt;starting debug -&gt; attach to running application </li>
+<li>在合适的地方设置断点，即可进行调试．</li>
+</ol>
+<h3 id="clion"><a href="#clion" class="headerlink" title="clion"></a>clion</h3><p>clion 是一款基于Cmake的C++ IDE ，教程[4]写的挺好的，收费，平时学习的过程中很都是用的它，就在网上搜了搜，果然支持ros的编译调试，而且出了官方的手册.  以下是主要的配置步骤:</p>
+<h6 id="1-配置桌面入口"><a href="#1-配置桌面入口" class="headerlink" title="1. 配置桌面入口"></a>1. 配置桌面入口</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.local/share/applications</span><br><span class="line">sudo vim jetbrains-clion-*.desktop</span><br></pre></td></tr></table></figure>
+
+<p>在文件中添加<code>Exec=bash -i -c **&quot;PATH_TO_CLION/bin/clion.sh&quot;** %f</code>之后的文件应该长这个样子.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Version=1.0</span><br><span class="line">Type=Application</span><br><span class="line">Name=CLion</span><br><span class="line">Icon=/opt/clion-2018.2/bin/clion.svg</span><br><span class="line">Exec=bash -i -c "/opt/clion-2018.2/bin/clion.sh" %f</span><br><span class="line">Comment=The Drive to Develop</span><br><span class="line">Categories=Development;IDE;</span><br><span class="line">Terminal=false</span><br><span class="line">StartupWMClass=jetbrains-clion</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-在Clion中打开ROS工作区"><a href="#2-在Clion中打开ROS工作区" class="headerlink" title="2.  在Clion中打开ROS工作区"></a>2.  在Clion中打开ROS工作区</h6><p>直接选择CMakeLists.txt 然后以工程方式打开就行了.打开之后长这样子:注意最后会有提示完成的文字,当然出错了也会提醒你的.</p>
+<p><img src="https://www.jetbrains.com/help/img/idea/2019.2/cl_ros_cmakeload_success.png" alt="successfully load cmake project"></p>
+<h6 id="3-将Clion生成的编译文件放到catkin工程中"><a href="#3-将Clion生成的编译文件放到catkin工程中" class="headerlink" title="3. 将Clion生成的编译文件放到catkin工程中"></a>3. 将Clion生成的编译文件放到catkin工程中</h6><p>Clion会生成自己的编译文件的文件夹, 因此要将两个结合一下.</p>
+<ul>
+<li>In <strong>Generation path</strong>, set workspace_folder/build.</li>
+<li>In <strong>CMake options</strong>, add <code>-DCATKIN_DEVEL_PREFIX:PATH=workspace_folder/devel</code>.</li>
+</ul>
+<p><img src="https://www.jetbrains.com/help/img/idea/2019.2/cl_ros_cmake_settings.png" alt="cmake settings for ros projects"></p>
+<h6 id="4-使launch采用xml格式的文件打开"><a href="#4-使launch采用xml格式的文件打开" class="headerlink" title="4. 使launch采用xml格式的文件打开"></a>4. 使launch采用xml格式的文件打开</h6><ol>
+<li>Go to <strong>File | Settings (Ctrl+Alt+S) | Editor | File Types</strong> and select <strong>XML</strong> from the list of <strong>Recognized File Types</strong>.</li>
+<li>Add <em>.launch extension to the list of *</em>Registered Patterns**.</li>
+</ol>
+<h6 id="5-debug"><a href="#5-debug" class="headerlink" title="5. debug"></a>5. debug</h6><ol>
+<li>启动master, 然后运行需要调试的节点</li>
+<li>Run | Attach to Proces,,然后选择你需要调试的节点.</li>
+</ol>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ol>
+<li><a href="http://wiki.ros.org/IDEs" target="_blank" rel="noopener">http://wiki.ros.org/IDEs</a></li>
+<li><a href="https://answers.ros.org/question/9068/which-ides-do-ros-developers-use/" target="_blank" rel="noopener">https://answers.ros.org/question/9068/which-ides-do-ros-developers-use/</a></li>
+<li><a href="https://ros-qtc-plugin.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://ros-qtc-plugin.readthedocs.io/en/latest/</a></li>
+<li><a href="https://www.jetbrains.com/help/clion/ros-setup-tutorial.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/clion/ros-setup-tutorial.html</a></li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://haitao926.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 haitaoW</li>
+      <li><a href="https://haitao926.github.io">Home</a></li>
+      
+      <li><a href="https://github.com/haitao926">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
