@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    2019暑期SLAM感悟 | Haitao Space
+    大疆笔试题整理 | Haitao Space
   </title>
   <meta name="description" content="Stay hungry, stay foolish.">
   
   <meta name="keywords" content="
-  总结
+  笔试题
   ">
   
   <meta name="author" content="haitaoW">
@@ -128,21 +128,47 @@
     <i class="fa fa-user-o"></i>
     haitaoW
 
-    <span class="post-date float-right" title="{{moment(1563947821000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1564064945000).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1563947821000).fromNow()}}
+      {{moment(1564064945000).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>2019暑期SLAM感悟</h1>
-    <ol>
-<li>在圆桌论坛的时候老师们关于读博谈到以下几点：<ol>
-<li>踏实，沉得下心。这似乎没有说的这么简单，之前很长的一段时间里都没有能够平心静气的去完成与处理事情。</li>
-<li>坚持的踏实，沉下心做事情。</li>
-<li>数学好，编程好。</li>
+    <h1>大疆笔试题整理</h1>
+    <blockquote>
+<p>大疆的秋招开始的很早，没有参加提前批，是我正式投递的第一家岗位：嵌入式软件工程师；很早之前就在网上收集了大疆的面试题目，但是没有系统的整理做完。以2014年大疆的题目类型作为划分。</p>
+</blockquote>
+<h3 id="编程基础"><a href="#编程基础" class="headerlink" title="编程基础"></a>编程基础</h3><ol>
+<li><strong>函数指针、指针函数、指针函数数组等概念</strong></li>
+<li><strong>用C实现的链表操作（add、del、mod、倒置）</strong></li>
 </ol>
+<h3 id="嵌入式基本知识"><a href="#嵌入式基本知识" class="headerlink" title="嵌入式基本知识"></a>嵌入式基本知识</h3><ol>
+<li><strong>Linux中断实现机制和中断对外设时序间隙的影响、中断中不能用延时的原因</strong></li>
+<li><strong>实时系统和非实时系统的优缺点</strong></li>
+</ol>
+<h3 id="基本通信知识"><a href="#基本通信知识" class="headerlink" title="基本通信知识"></a>基本通信知识</h3><ol>
+<li><strong>IIC、SPI、UART、单总线等要从时序、安全性、数据传输等多方面来讲</strong></li>
+</ol>
+<h3 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h3><p>2019年题目：<a href="https://blog.csdn.net/qq_38410730/article/details/80951443" target="_blank" rel="noopener">https://blog.csdn.net/qq_38410730/article/details/80951443</a></p>
+<h4 id="1-ARM指令和Thumb指令"><a href="#1-ARM指令和Thumb指令" class="headerlink" title="1.ARM指令和Thumb指令"></a>1.ARM指令和Thumb指令</h4><ol>
+<li><p><strong>ARM</strong>状态：arm处理器处于32位指令的状态，所有的指令均为32位；</p>
 </li>
+<li><p><strong>thumb状态</strong>：arm执行16位指令的状态，即为16位状态</p>
+</li>
+<li><p><strong>thumb-2 状态</strong>: ARM7版本具有的新状态，兼有16位以及32位指令，实现了更高性能更有效的功耗与极少的占用内存。</p>
+</li>
+<li><p><strong>调试状态</strong>： 处理器停机进入调试状态</p>
+</li>
+<li><p><strong>ARM状态与thumb状态的切换</strong>：状态将寄存器的最低位设置为1 ：arm-&gt;thumb ; 0:  thumb-&gt;arm </p>
+</li>
+</ol>
+<p>ARM状态与thumb状态的本质区别是指令集的位数不同，ARM是32位的指令集，而thumb是16位的指令集，thrumb-2 是arm与thumb状态的结合与优化。</p>
+<p><strong>注意</strong>:</p>
+<ol>
+<li>Cortex-M3只有Thumb-2状态和调试状态；</li>
+<li>ARM处理器复位之后开始执行的代码总是只是出于ARM状态；</li>
+<li>有Thumb-2 就无须thumb ，也不需要与ARM状态进行切换。</li>
 </ol>
 
   </article>
