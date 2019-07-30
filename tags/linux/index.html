@@ -149,10 +149,10 @@
     <li class="">
       <a href="/archives">Posts <span class="counter">5</span></a>
     </li>
-    <li class="selected">
+    <li class="">
       <a href="/categories">Categories <span
                 class="counter">4</span></a></li>
-    <li class="">
+    <li class="selected">
       <a href="/tags">Tags <span class="counter">5</span></a></li>
   </ul>
 </nav>
@@ -161,50 +161,33 @@
       <ul class="archive-list">
         
         <li class="archive-list-item">
-          <h2><a href="/2019/07/25/ROS的IDE们/">ROS的IDE们</a></h2>
+          <h2><a href="/2019/07/30/“linxu-硬件基础-存储结构/">“linxu 硬件基础</a></h2>
           <p>
              
- 从研一接触ROS到现在, 一直在被两件是折腾着, 1.怎么编译, 2. 怎么degug.一开始用的roboware, 能够自动添加CMakeLists,  一些小动能如自动启动launch文件等.  后来开源了但是也不更新了,  自身有些bug也没能修复. 
+ 主要包括： 1. 存储结构；2. 页与MMU；3. 进程切换与开销 
  
- 关于IDE ros.wiki...
+   存储结构  
+    存储结构示意图  
+ 
+   
+ 结构图要点解析： 
+ 
+ 金字塔越往上速度越快，价格越高，磁盘是非易失性存储，其他都是易失性存储。 
+ 每次上电，只有磁盘有数据然后根据算法挑选数据进行向上传...
           </p>
           <ul class="tag-list clearfix">
             
-            <li class="tag-list-item"><a href="/tags/ROS/">ROS</a></li>
+            <li class="tag-list-item"><a href="/tags/linux/">linux</a></li>
             
           </ul>
           <div class="post-info">
             <span>
               
-              <a class="category-link" href="/categories/Tutorial/"><i class="fa fa-folder-open"></i> Tutorial</a>
+              <a class="category-link" href="/categories/linux/"><i class="fa fa-folder-open"></i> linux</a>
               
             </span>
             <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1564057850000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2019/07/24/linux下hexo安装/">linux下hexo安装</a></h2>
-          <p>
-             
- 在暑期学校最后阶段几个大佬分享经验的过程中都提到了写博客的问题,之前自己也折腾了各种写博客的方式,尝试了很多markdown的编辑器,此外,临近研三,也越来越发现学过的知识,整理与归档的重要性,所以,博客写给自己看. 
- 
-  hexo是由Nodes支持的一个博客框架,关于使用hexo搭建的博...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/hexo/">hexo</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/Tutorial/"><i class="fa fa-folder-open"></i> Tutorial</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1563936441000).fromNow()}}</span>
+            <span>Published {{moment(1564492099000).fromNow()}}</span>
           </div>
         </li>
         
