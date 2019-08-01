@@ -88,7 +88,7 @@
         <a href="/archives" class="header-toolbar-left"><i
                   class="fa fa-file-text"></i> Posts </a>
         <a href="/archives"
-           class="header-toolbar-right"> 5 </a>
+           class="header-toolbar-right"> 6 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i
@@ -314,6 +314,106 @@
 <li>ARM处理器复位之后开始执行的代码总是只是出于ARM状态；</li>
 <li>有Thumb-2 就无须thumb ，也不需要与ARM状态进行切换。</li>
 </ol>
+<h4 id="2-Q：linux-中的文件-目录权限设置命令"><a href="#2-Q：linux-中的文件-目录权限设置命令" class="headerlink" title="2. Q：linux 中的文件/目录权限设置命令"></a>2. Q：linux 中的文件/目录权限设置命令</h4><p>​    <strong>A :  chmod</strong></p>
+<h4 id="3-Q：-大小端的问题"><a href="#3-Q：-大小端的问题" class="headerlink" title="3. Q： 大小端的问题"></a>3. Q： 大小端的问题</h4><p>​    <strong>大端模式（BE big-endian）：</strong>是指数据的低位保存在高位地址中，而数据的高位保存在内存的地地址中</p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0x0001</td>
+<td>12</td>
+</tr>
+<tr>
+<td>0x0002</td>
+<td>34</td>
+</tr>
+</tbody></table>
+<p>那么数值为0x1234；</p>
+<p>小端模式（LE little-endian）：是指数据的低位保存在内存的低位中，而数据的高位保存在内存的高位中。</p>
+<h3 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h3><h4 id="程序占用的内存："><a href="#程序占用的内存：" class="headerlink" title="程序占用的内存："></a>程序占用的内存：</h4><p>每个线程都会有自己的栈，但是堆空间是共用的。</p>
+<ol>
+<li>栈区（stack）：由编译器自动分配释放在编译期间就能确定存储大小，存放函数的参数值，局部变量值以及函数的返回值。操作方式和数据结构中的栈类似，按照内存地址由高到低生长，速度快，但自由行差，最大空间不大（VC编译器的默认栈的大小为1M）。</li>
+<li>堆区（heap）：存放new或者malloc申请的对象，需要手动释放，如果没有释放，程序结束时候由OS回收；堆由高地址向低地址生长。堆的大小一般没有限制，理论上每个程序最大可达到4G。</li>
+<li>静态（全局）区（static）：全局变量和静态变量存储的区域，程序结束后由系统释放。</li>
+<li>常量存储区：存放的是常量，不可以修改，全局可见；</li>
+<li>代码存储区：存储二进制代码</li>
+<li>关于堆、栈对比</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>栈</th>
+<th>堆</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>存储内容</td>
+<td>局部变量、形参、函数返回值</td>
+<td>new、malloc申请的地址</td>
+</tr>
+<tr>
+<td>作用域</td>
+<td>函数作用域、语句块作用域</td>
+<td>函数作用域</td>
+</tr>
+<tr>
+<td>编译期间是否确定大小</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>大小</td>
+<td>1M</td>
+<td>4GB</td>
+</tr>
+<tr>
+<td>内存分配方式</td>
+<td>地址由高到低的减少</td>
+<td>地址由低到高</td>
+</tr>
+<tr>
+<td>内存是否可以修改</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<p><img src="http://hi.csdn.net/attachment/201202/21/0_1329798989zO3K.gif" alt="img"></p>
+<h4 id="C语言文件在编译与执行的四个阶段"><a href="#C语言文件在编译与执行的四个阶段" class="headerlink" title="C语言文件在编译与执行的四个阶段"></a>C语言文件在编译与执行的四个阶段</h4><p>代码的编译过程分为编译与连接两个过程</p>
+<p><img src="https://img-blog.csdn.net/20161012213642133?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
+<p>编译过程又分为编译与汇编。</p>
+<p><strong><u><em>编译</em></u></strong>：读取源程序（字符流），对之进行词法和语法分析，将高级语言指令转换为功能等效的汇编代码。源文件的编译的过程分为两部分。</p>
+<p><strong>预处理阶段</strong>: 进行以下几个方面的处理</p>
+<ol>
+<li>宏定义指令：#define a b</li>
+<li>条件预编译指令： #ifdef, #ifndef, #else, #elif ,# endif 等。</li>
+<li>头文件包含：#include </li>
+</ol>
+<p><strong>第二阶段编译：优化阶段</strong></p>
+<p>编译程序所要做的工作就是通过词法分析与语法分析，在确认所有的指令都符合语法规则之后，将其翻译成等价的中间代码或是汇编代码。</p>
+<p><strong>优化阶段</strong>：</p>
+<ol>
+<li>对中间代码的优化，删除公共表达式，循环优化（代码外提，强度削弱，变量循环控制），腹泻传播；</li>
+<li>针对代码的生成进行，同机器的硬件结构密切相关，主要考虑的是如何充分利用机器的各个硬件寄存器存放相关变量，以减少对内存的访问次数。</li>
+</ol>
+<p><strong>*<u>汇编</u>*</strong>： 汇编实际上指把汇编代码发已成目标机器指令的过程。对于被翻译系统处理的每一个C语言源程序，豆浆最终经过这一处理得到相应的目标代码文件。一个目标文件中至少有两个段：</p>
+<ol>
+<li><p><strong>代码段</strong>： 包含程序的指令，可读，可执行，不可写。</p>
+</li>
+<li><p><strong>数据段</strong>： 主要存放在程序中要用到的全局变量与静态变量，可读可写可执行；</p>
+</li>
+</ol>
+<p><strong><u><em>连接</em></u></strong>： 将有关的文件彼此相连接，使得所有的这些目标文件成为一个能够被操作系统装入执行的统一整体。</p>
+<p>连接处理可分为两种：</p>
+<p><strong>静态链接</strong>：函数的代码将其所在的静态连接库中被拷贝到最终的可执行程序中。这样在被执行是代码将被装入进程的虚拟空间中。</p>
+<p><strong>动态链接</strong>： 函数的代码将被放在成为动态链接库或共享对象的某个目标文件中。</p>
+<p>在linux使用的GCC将以上几个过程进行捆绑。</p>
+<p><img src="https://img-blog.csdn.net/20161012213659383?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
+<p><strong>预编译、编译、汇编、链接</strong></p>
 
   </article>
 </div>
