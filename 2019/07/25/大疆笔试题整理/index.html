@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    大疆笔试题整理 | Haitao Space
+    嵌入式操作系统知识点框架整理 | Haitao Space
   </title>
   <meta name="description" content="Stay hungry, stay foolish.">
   
@@ -88,19 +88,19 @@
         <a href="/archives" class="header-toolbar-left"><i
                   class="fa fa-file-text"></i> Posts </a>
         <a href="/archives"
-           class="header-toolbar-right"> 6 </a>
+           class="header-toolbar-right"> 10 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i
                   class="fa fa-tags"></i> Tags </a>
         <a href="/tags"
-           class="header-toolbar-right"> 5 </a>
+           class="header-toolbar-right"> 7 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i
                   class="fa fa-folder-open"></i> Categories </a>
         <a href="/categories"
-           class="header-toolbar-right"> 4 </a>
+           class="header-toolbar-right"> 6 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -135,186 +135,48 @@
   </h3>
 
   <article class="post-content">
-    <h1>大疆笔试题整理</h1>
+    <h1>嵌入式操作系统知识点框架整理</h1>
     <blockquote>
-<p>大疆的秋招开始的很早，没有参加提前批，是我正式投递的第一家岗位：嵌入式软件工程师；很早之前就在网上收集了大疆的面试题目，但是没有系统的整理做完。以2014年大疆的题目类型作为划分。</p>
-</blockquote>
-<h3 id="编程基础"><a href="#编程基础" class="headerlink" title="编程基础"></a>编程基础</h3><ol>
-<li><strong>函数指针、指针函数、指针函数数组等概念</strong></li>
-<li></li>
-<li><strong>用C实现的链表操作（add、del、mod、倒置）</strong></li>
+<p>写在前面：</p>
+<ol>
+<li>本来是打算整理大疆软件工程师的面试题目，但是逐渐的发现作为嵌入式软件工程师并不是你会用单片机，会调调代码就行了的。需要对整个的计算机系统都有较深了解，既要有深度也要有广度。</li>
+<li>在整理的阶段发现，看到很多优秀的博客，对于问题能够深入浅出的分析，自己真实望尘莫及。写博客不光可以加深自己的理解，梳理自己的思路，也是交流的一种好的方式。</li>
+<li>为准备面试，也为了更好的理解嵌入式系统，结合网上大佬们的整理将进行一下几点的整理。但其实每个问题展开来讲都是一篇博客，只能借助自己的理解进行适当的整理，后续会继续修改。</li>
+<li>为了更有目标导向性，会以面试题+ 答案+相关知识基础的形式展开此系列的博客。</li>
 </ol>
-<h3 id="嵌入式基本知识"><a href="#嵌入式基本知识" class="headerlink" title="嵌入式基本知识"></a>嵌入式基本知识</h3><ol>
+<p>此外此处会收录其他的未分类的问题。</p>
+</blockquote>
+<h4 id="C语言基础："><a href="#C语言基础：" class="headerlink" title="C语言基础："></a><strong>C语言基础</strong>：</h4><ol>
+<li>函数指针、指针函数、指针函数数组等概念</li>
+<li>C语言关键字 static、const  、volatile。</li>
+<li>sizeof ()  union and struct</li>
+<li>malloc函数</li>
+</ol>
+<h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><ol>
+<li>用C实现的链表操作（add、del、mod、倒置）</li>
+<li>排序算法</li>
+</ol>
+<h4 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h4><ol>
+<li>内存管理</li>
+<li>进程管理</li>
+<li>实时系统和非实时系统</li>
+<li>任务间通信</li>
+<li>中断处理</li>
+</ol>
+<h3 id="linux基础"><a href="#linux基础" class="headerlink" title="linux基础"></a>linux基础</h3><ol>
 <li><p><strong>Linux中断实现机制和中断对外设时序间隙的影响、中断中不能用延时的原因</strong></p>
 </li>
-<li><p><strong>实时系统和非实时系统的优缺点</strong></p>
-</li>
-<li><h4 id="linux-内核态与用户态"><a href="#linux-内核态与用户态" class="headerlink" title="linux 内核态与用户态"></a>linux 内核态与用户态</h4></li>
-</ol>
-<h3 id="基本通信知识"><a href="#基本通信知识" class="headerlink" title="基本通信知识"></a>基本通信知识</h3><h4 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h4><p>微机中总线一般有内部总线，系统总线，和外部总线。</p>
-<p>内部总线：外围芯片与处理器之间的总线：IIC、SPI。</p>
-<p>系统总线：PCI，最大传输速率可达132M/S</p>
-<p>外部总线：RS232；RS484；USB。</p>
-<ol>
-<li><p><strong>IIC、SPI、UART、单总线等要从时序、安全性、数据传输等多方面来讲</strong></p>
-<table>
-<thead>
-<tr>
-<th>总线接口</th>
-<th>同步/异步</th>
-<th>速率</th>
-<th>工作方式</th>
-<th>用线</th>
-<th>总线拓扑结构</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>UART</td>
-<td>异步</td>
-<td>慢（bund）</td>
-<td>双工</td>
-<td>2（TX，RX）</td>
-<td>都有</td>
-</tr>
-<tr>
-<td>IIC</td>
-<td>同步</td>
-<td>慢</td>
-<td>半双工</td>
-<td>2（SDA，SCL）</td>
-<td>总线型</td>
-</tr>
-<tr>
-<td>SPI</td>
-<td>同步</td>
-<td>快</td>
-<td>半双工</td>
-<td>4（sclk，simo，somi，ss）</td>
-<td>环形</td>
-</tr>
-<tr>
-<td>USB</td>
-<td>同步</td>
-<td>快</td>
-<td>半双工</td>
-<td>4（Vbus）</td>
-<td>星型</td>
-</tr>
-<tr>
-<td>1-wire</td>
-<td>同步</td>
-<td>慢</td>
-<td>半双工</td>
-<td>1</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>同步与异步的区别：异步是需要等待的，同步是指及时响应 的问题。</p>
-<h3 id="TCP与UDP"><a href="#TCP与UDP" class="headerlink" title="TCP与UDP"></a>TCP与UDP</h3><p>TCP/IP协议是一个协议簇。里面包括很多协议。UDP只是其中的一个。之所以命名为TCP/IP协议，因为TCP,IP协议是两个很重要的协议，就用他两命名了。</p>
-<p>TCP（Transmission Control Protocol，传输控制协议）是面向连接的协议。</p>
-<p><img src="https://img-blog.csdn.net/20170516204339754?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTk1Nzc1OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></p>
+<li><h6 id="linux-内核态与用户态"><a href="#linux-内核态与用户态" class="headerlink" title="linux 内核态与用户态"></a>linux 内核态与用户态</h6></li>
+<li><p>linux多线程与多进程通信</p>
 </li>
 </ol>
-<p><strong>TCP的三次握手</strong></p>
-<ol>
-<li>主机A通过向主机B发送一个含有同步序列号（SYN）的标志位的数据段给主机B，向主机B请求建立连接，用过这个数据段，主机A告诉主机B我想要和你通信；你可以用哪个序列号作为作为起始数据段来回应我。</li>
-<li>主机B收到主机A的请求后，用一个带有确认应答的（ACK）和同步序列号的（SYN）标志位的数据段响应主机A也告诉他两件事：1. 我已经接收你的请求了你可以传输数据了，你要用哪个序列号作为起始数据段来回应我。</li>
-<li>主机A接收到这个数据段后，在发送一个确认应答，确认已收到主机B的数据段。我已经收到回复，我现在要开始传输数据了。</li>
+<h3 id="ARM框架"><a href="#ARM框架" class="headerlink" title="ARM框架"></a>ARM框架</h3><h3 id="编译基础"><a href="#编译基础" class="headerlink" title="编译基础"></a>编译基础</h3><p>内存对其</p>
+<p>编译与执行的过程</p>
+<h3 id="通信基础"><a href="#通信基础" class="headerlink" title="通信基础"></a>通信基础</h3><ol>
+<li>外设与总线</li>
+<li>通信协议：TCP与UDP</li>
 </ol>
-<p><strong>TCP的四次挥手</strong></p>
-<ol>
-<li>当主机A完成数据传输后，将控制为FIN置1 ，提出停止TCP连接请求</li>
-<li>主机收到FIN后对其作出响应，确认这一方向上的TCP连接将关闭将ACK置1；</li>
-<li>由B端再次提出反方向的关闭请求，将FIN置1</li>
-<li>主机A对主机B的请求进行响应，将ACK置1，双方向的关闭结束。</li>
-</ol>
-<blockquote>
-<p>几个关键字解释：</p>
-<ol>
-<li>ACK  TCP报头的控制位之一，对数据进行确认，确认由目的端发出，用它来告诉发送</li>
-<li>SYN 同步序列号，TCP建立时将这个位置1</li>
-<li>FIN 发送端完成发送人物段，当TCP完成数据传输需要断开，提出断开连接的一方将这位置位</li>
-</ol>
-</blockquote>
-<p><strong>DUP</strong>（User Data Protocol，用户数据报协议）是一个非连接的协议。</p>
-<p><img src="https://img-blog.csdn.net/20170516210523641?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTk1Nzc1OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="è¿éåå¾çæè¿°"></p>
-<p>由于不需要建立连接，所以不断的往对方的主机发送UDP数据包，然年后对方主机确认收到消息及时反馈回来。（ping 操作就是基于这个原理）</p>
-<p>TCP 与UDP的区别</p>
-<table>
-<thead>
-<tr>
-<th align="left">1. 角度</th>
-<th>TCP</th>
-<th>UDP</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">是否连接</td>
-<td>面向连接（发送数前需要建立连接）</td>
-<td>无需连接</td>
-</tr>
-<tr>
-<td align="left">是否丢包重试</td>
-<td>实现数据传输时 的各种控制功能，可以进行丢包的重新发送，还可以对次序乱掉的包进行顺序控制</td>
-<td>不会进行丢包重试，也不会纠正到达的顺序</td>
-</tr>
-<tr>
-<td align="left">模式</td>
-<td>流模式（面向字节流）</td>
-<td>数据包模式（面向报文）</td>
-</tr>
-<tr>
-<td align="left">对应关系</td>
-<td>一对一</td>
-<td>支持一对一，一对多，多对一和多对多的交互通信。</td>
-</tr>
-<tr>
-<td align="left">头部开销</td>
-<td>最小20字节</td>
-<td>只有8字节</td>
-</tr>
-<tr>
-<td align="left">可靠性</td>
-<td>全双工，非常可靠无差错不丢失不重复且按照顺序到达</td>
-<td>不可保证交付，不保证顺序到达</td>
-</tr>
-<tr>
-<td align="left">拥塞控制</td>
-<td>有控制</td>
-<td>有拥塞控制，因此网络出现</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="left"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h3><p>2019年题目：<a href="https://blog.csdn.net/qq_38410730/article/details/80951443" target="_blank" rel="noopener">https://blog.csdn.net/qq_38410730/article/details/80951443</a></p>
-<h4 id="1-ARM指令和Thumb指令"><a href="#1-ARM指令和Thumb指令" class="headerlink" title="1.ARM指令和Thumb指令"></a>1.ARM指令和Thumb指令</h4><ol>
-<li><p><strong>ARM</strong>状态：arm处理器处于32位指令的状态，所有的指令均为32位；</p>
-</li>
-<li><p><strong>thumb状态</strong>：arm执行16位指令的状态，即为16位状态</p>
-</li>
-<li><p><strong>thumb-2 状态</strong>: ARM7版本具有的新状态，兼有16位以及32位指令，实现了更高性能更有效的功耗与极少的占用内存。</p>
-</li>
-<li><p><strong>调试状态</strong>： 处理器停机进入调试状态</p>
-</li>
-<li><p><strong>ARM状态与thumb状态的切换</strong>：状态将寄存器的最低位设置为1 ：arm-&gt;thumb ; 0:  thumb-&gt;arm </p>
-</li>
-</ol>
-<p>ARM状态与thumb状态的本质区别是指令集的位数不同，ARM是32位的指令集，而thumb是16位的指令集，thrumb-2 是arm与thumb状态的结合与优化。</p>
-<p><strong>注意</strong>:</p>
-<ol>
-<li>Cortex-M3只有Thumb-2状态和调试状态；</li>
-<li>ARM处理器复位之后开始执行的代码总是只是出于ARM状态；</li>
-<li>有Thumb-2 就无须thumb ，也不需要与ARM状态进行切换。</li>
-</ol>
-<h4 id="2-Q：linux-中的文件-目录权限设置命令"><a href="#2-Q：linux-中的文件-目录权限设置命令" class="headerlink" title="2. Q：linux 中的文件/目录权限设置命令"></a>2. Q：linux 中的文件/目录权限设置命令</h4><p>​    <strong>A :  chmod</strong></p>
+<p> <img src="https://github.com/haitao926/EmbeddedSystem/raw/master/assets/1538010353621.png" alt="1538010353621"></p>
 <h4 id="3-Q：-大小端的问题"><a href="#3-Q：-大小端的问题" class="headerlink" title="3. Q： 大小端的问题"></a>3. Q： 大小端的问题</h4><p>​    <strong>大端模式（BE big-endian）：</strong>是指数据的低位保存在高位地址中，而数据的高位保存在内存的地地址中</p>
 <table>
 <thead>
@@ -334,6 +196,9 @@
 </tbody></table>
 <p>那么数值为0x1234；</p>
 <p>小端模式（LE little-endian）：是指数据的低位保存在内存的低位中，而数据的高位保存在内存的高位中。</p>
+<p><a href="https://jocent.me/2017/07/25/big-little-endian.html" target="_blank" rel="noopener">https://jocent.me/2017/07/25/big-little-endian.html</a></p>
+<p><a href="https://blog.csdn.net/ce123_zhouwei/article/details/6971544" target="_blank" rel="noopener">https://blog.csdn.net/ce123_zhouwei/article/details/6971544</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2016/11/byte-order.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/11/byte-order.html</a></p>
 <h3 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h3><h4 id="程序占用的内存："><a href="#程序占用的内存：" class="headerlink" title="程序占用的内存："></a>程序占用的内存：</h4><p>每个线程都会有自己的栈，但是堆空间是共用的。</p>
 <ol>
 <li>栈区（stack）：由编译器自动分配释放在编译期间就能确定存储大小，存放函数的参数值，局部变量值以及函数的返回值。操作方式和数据结构中的栈类似，按照内存地址由高到低生长，速度快，但自由行差，最大空间不大（VC编译器的默认栈的大小为1M）。</li>
@@ -383,37 +248,6 @@
 </tr>
 </tbody></table>
 <p><img src="http://hi.csdn.net/attachment/201202/21/0_1329798989zO3K.gif" alt="img"></p>
-<h4 id="C语言文件在编译与执行的四个阶段"><a href="#C语言文件在编译与执行的四个阶段" class="headerlink" title="C语言文件在编译与执行的四个阶段"></a>C语言文件在编译与执行的四个阶段</h4><p>代码的编译过程分为编译与连接两个过程</p>
-<p><img src="https://img-blog.csdn.net/20161012213642133?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
-<p>编译过程又分为编译与汇编。</p>
-<p><strong><u><em>编译</em></u></strong>：读取源程序（字符流），对之进行词法和语法分析，将高级语言指令转换为功能等效的汇编代码。源文件的编译的过程分为两部分。</p>
-<p><strong>预处理阶段</strong>: 进行以下几个方面的处理</p>
-<ol>
-<li>宏定义指令：#define a b</li>
-<li>条件预编译指令： #ifdef, #ifndef, #else, #elif ,# endif 等。</li>
-<li>头文件包含：#include </li>
-</ol>
-<p><strong>第二阶段编译：优化阶段</strong></p>
-<p>编译程序所要做的工作就是通过词法分析与语法分析，在确认所有的指令都符合语法规则之后，将其翻译成等价的中间代码或是汇编代码。</p>
-<p><strong>优化阶段</strong>：</p>
-<ol>
-<li>对中间代码的优化，删除公共表达式，循环优化（代码外提，强度削弱，变量循环控制），腹泻传播；</li>
-<li>针对代码的生成进行，同机器的硬件结构密切相关，主要考虑的是如何充分利用机器的各个硬件寄存器存放相关变量，以减少对内存的访问次数。</li>
-</ol>
-<p><strong>*<u>汇编</u>*</strong>： 汇编实际上指把汇编代码发已成目标机器指令的过程。对于被翻译系统处理的每一个C语言源程序，豆浆最终经过这一处理得到相应的目标代码文件。一个目标文件中至少有两个段：</p>
-<ol>
-<li><p><strong>代码段</strong>： 包含程序的指令，可读，可执行，不可写。</p>
-</li>
-<li><p><strong>数据段</strong>： 主要存放在程序中要用到的全局变量与静态变量，可读可写可执行；</p>
-</li>
-</ol>
-<p><strong><u><em>连接</em></u></strong>： 将有关的文件彼此相连接，使得所有的这些目标文件成为一个能够被操作系统装入执行的统一整体。</p>
-<p>连接处理可分为两种：</p>
-<p><strong>静态链接</strong>：函数的代码将其所在的静态连接库中被拷贝到最终的可执行程序中。这样在被执行是代码将被装入进程的虚拟空间中。</p>
-<p><strong>动态链接</strong>： 函数的代码将被放在成为动态链接库或共享对象的某个目标文件中。</p>
-<p>在linux使用的GCC将以上几个过程进行捆绑。</p>
-<p><img src="https://img-blog.csdn.net/20161012213659383?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
-<p><strong>预编译、编译、汇编、链接</strong></p>
 
   </article>
 </div>

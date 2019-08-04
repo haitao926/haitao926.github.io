@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    2019暑期SLAM感悟 | Haitao Space
+    C语言基础 | Haitao Space
   </title>
   <meta name="description" content="Stay hungry, stay foolish.">
   
   <meta name="keywords" content="
-  总结
+  
   ">
   
   <meta name="author" content="haitaoW">
@@ -128,27 +128,25 @@
     <i class="fa fa-user-o"></i>
     haitaoW
 
-    <span class="post-date float-right" title="{{moment(1563947821000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1564842393000).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1563947821000).fromNow()}}
+      {{moment(1564842393000).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>2019暑期SLAM感悟</h1>
-    <ol>
-<li><p>在圆桌论坛的时候老师们关于读博谈到以下几点：</p>
+    <h1>C语言基础</h1>
+    <blockquote>
+<p>针对嵌入式软件工程师岗位经常出现的C语言问题</p>
 <ol>
-<li>踏实，沉得下心。这似乎没有说的这么简单，之前很长的一段时间里都没有能够平心静气的去完成与处理事情。</li>
-<li>坚持的踏实，沉下心做事情。</li>
-<li>数学好，编程好。</li>
+<li>函数指针、指针函数、指针函数数组等概念</li>
+<li>C语言关键字 static、const  、volatile。</li>
+<li>sizeof ()  union and struct</li>
+<li>malloc函数</li>
 </ol>
-</li>
-<li><p>多总结，多交流，不能闭门造车，不能发现并问问题就是你的问题。</p>
-</li>
-<li><p>学习要认真踏实，课后的习题很打脸啊。</p>
-</li>
-</ol>
+</blockquote>
+<h4 id="关键字const"><a href="#关键字const" class="headerlink" title="关键字const"></a>关键字const</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a;			<span class="comment">//a为常整形数，是不可以改变的</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> a;			<span class="comment">//和上面的一样</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *a;			<span class="comment">// a是一个指向长整形的指针，</span></span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> a;			<span class="comment">//const </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> a;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> * <span class="keyword">const</span> a;</span><br></pre></td></tr></table></figure>
+
 
   </article>
 </div>
