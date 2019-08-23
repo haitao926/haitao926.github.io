@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    C语言基础 | Haitao Space
+    C与C++整理 | Haitao Space
   </title>
   <meta name="description" content="Stay hungry, stay foolish.">
   
   <meta name="keywords" content="
-  
+  C/C++
   ">
   
   <meta name="author" content="haitaoW">
@@ -88,19 +88,19 @@
         <a href="/archives" class="header-toolbar-left"><i
                   class="fa fa-file-text"></i> Posts </a>
         <a href="/archives"
-           class="header-toolbar-right"> 7 </a>
+           class="header-toolbar-right"> 9 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i
                   class="fa fa-tags"></i> Tags </a>
         <a href="/tags"
-           class="header-toolbar-right"> 5 </a>
+           class="header-toolbar-right"> 8 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i
                   class="fa fa-folder-open"></i> Categories </a>
         <a href="/categories"
-           class="header-toolbar-right"> 4 </a>
+           class="header-toolbar-right"> 5 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -135,18 +135,71 @@
   </h3>
 
   <article class="post-content">
-    <h1>C语言基础</h1>
+    <h1>C与C++整理</h1>
     <blockquote>
-<p>针对嵌入式软件工程师岗位经常出现的C语言问题</p>
+<p>目录：</p>
 <ol>
-<li>函数指针、指针函数、指针函数数组等概念</li>
-<li>C语言关键字 static、const  、volatile。</li>
-<li>sizeof ()  union and struct</li>
-<li>malloc函数</li>
+<li>引用与指针的区别</li>
 </ol>
 </blockquote>
-<h4 id="关键字const"><a href="#关键字const" class="headerlink" title="关键字const"></a>关键字const</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a;			<span class="comment">//a为常整形数，是不可以改变的</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> a;			<span class="comment">//和上面的一样</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *a;			<span class="comment">// a是一个指向长整形的指针，</span></span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> a;			<span class="comment">//const </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> a;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> * <span class="keyword">const</span> a;</span><br></pre></td></tr></table></figure>
+<h4 id="1-引用与指针的区别"><a href="#1-引用与指针的区别" class="headerlink" title="1. 引用与指针的区别"></a>1. 引用与指针的区别</h4><ol>
+<li><h5 id="是什么："><a href="#是什么：" class="headerlink" title="是什么："></a><strong>是什么</strong>：</h5><ol>
+<li>指针是一个实体，需要分配内存空间，使用指针之前需要进行类型检查，避免出现野指针；引用只是变量的别名，不需要分配空间，引用底层是通过指针实现的；</li>
+<li>sizeof 引用得到的是所指向的变量（对象）的大小，而sizeof指针得到的是指针本身的大小；</li>
+</ol>
+</li>
+<li><h5 id="初始化："><a href="#初始化：" class="headerlink" title="初始化："></a>初始化：</h5><ol>
+<li>引用定义的时候必须进行初始化，并且不能够改变，指针在定义的时候不一定要初始化，且指向的空间可变；</li>
+<li>有多级指针，但是没有多级引用，只有一级引用；</li>
+</ol>
+</li>
+<li><h5 id="传参与访问："><a href="#传参与访问：" class="headerlink" title="传参与访问："></a>传参与访问：</h5><ol>
+<li>引用访问一个变量是直接访问的，而指针访问一个变量是间接访问的；</li>
+<li>作为参数时，传指针的实质是传值，传递的值是指针的地址，形参会在栈中开辟内存空间以存放实参值。</li>
+<li>传引用的实质是传地址，被调函数对形参的处理都是间接寻址，即通过栈中存放的地址访问主调函数中的实参变量。</li>
+</ol>
+</li>
+</ol>
+<h4 id="2-静态成员变量"><a href="#2-静态成员变量" class="headerlink" title="2.  静态成员变量"></a>2.  静态成员变量</h4><ol>
+<li><h5 id="静态成员变量的初始化"><a href="#静态成员变量的初始化" class="headerlink" title="静态成员变量的初始化"></a>静态成员变量的初始化</h5><p>静态成员变量与全局变量一样，存放在全局区域，编译阶段分配内存；<strong>C与C++在初始化节点有不同</strong>：C语言中，分配好内存之后就会进行初始化，程序结束，变量所处的全局内存被回收。C++中，全局或静态对象首次用到时才会进行构造，程序结束是，按照构造顺序反方向析构。</p>
+</li>
+</ol>
+<h4 id="3-static-关键字的作用与用法"><a href="#3-static-关键字的作用与用法" class="headerlink" title="3. static 关键字的作用与用法"></a>3. static 关键字的作用与用法</h4><ol>
+<li><p><strong>作用</strong>：</p>
+<ol>
+<li>隐藏，在编译多个文件时，未加static 的前缀的全局变量和函数都是全局可见的，也就是说，加了之后就只能在自己文件中使用。</li>
+<li>默认初始化的值为0；</li>
+<li>保持变量内容的持久性。</li>
+</ol>
+</li>
+<li><p><strong>C++中的</strong>类成员变量声明static</p>
+<ol>
+<li>函数体内的static 变量的作用域范畴在函数中，该变量的内存只分配一次，因此其值在下次调用时仍然维持上次的值。</li>
+<li>在类中的static成员变量属于整个类拥有，对类的所有对象职业后一份拷贝；</li>
+<li>static 成员函数属于整个类所拥有，不属于对象，这个函数不接受this 指针，不能访问非static类成员只能访问类的static成员变量。</li>
+<li>static 类对象必须在类外进行初始化，static修饰的变量先于对象存在，所以static修饰的变量要在类外初始化。</li>
+<li>static 成员函数不能被virtual 修饰，static 成员函数不属于任何对象或实例。静态成员函数没有this指针，虚函数的实现是每一个对象分配一个vptr 指针，而vptr 是通过this指针调用的，所以不能为virtual；</li>
+</ol>
+</li>
+</ol>
+<h4 id="4-关键字const"><a href="#4-关键字const" class="headerlink" title="4. 关键字const"></a>4. 关键字const</h4><ol>
+<li>阻止一个变量改变</li>
+<li>以下是const  指针等生命含义：</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a;			<span class="comment">//a为常整形数，是不可以改变的</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> a;			<span class="comment">//和上面的一样</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *a;			<span class="comment">// a是一个指向长整形的指针，</span></span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> a;			<span class="comment">//const </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> a;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> * <span class="keyword">const</span> a;</span><br></pre></td></tr></table></figure>
 
+<ol start="3">
+<li>对于类的成员函数，如果指定为const类型，则表明是一个常函数，不能修改类的成员变量，类的常对象智能访问类的常成员函数；</li>
+<li>const 类型成员可以通过类型转换符const_cast 将const类型转换为非const类型。</li>
+</ol>
+<h4 id="5-mutable用法"><a href="#5-mutable用法" class="headerlink" title="5. mutable用法"></a>5. mutable用法</h4><ol>
+<li>如果需要在const 成员方法中修改一个半成员变量的值，那么需要将这个成员函数修饰为mutable，及用mutable修饰的成员变量不受const 成员方法的限制。</li>
+</ol>
+<h4 id="6-深拷贝与浅拷贝"><a href="#6-深拷贝与浅拷贝" class="headerlink" title="6. 深拷贝与浅拷贝"></a>6. 深拷贝与浅拷贝</h4><ol>
+<li>浅拷贝：仅仅指向被复制的内存地址，如果地址中对象被改变了，那么浅复制出来的结果也会被相应改变。</li>
+<li>深拷贝：在计算机中开辟一块新的内存地址用于存放复制对象。</li>
+<li></li>
+</ol>
 <h4 id="编译与执行的四个阶段"><a href="#编译与执行的四个阶段" class="headerlink" title="编译与执行的四个阶段"></a>编译与执行的四个阶段</h4><p>代码的编译过程分为编译与连接两个过程</p>
 <p><img src="https://img-blog.csdn.net/20161012213642133?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
 <p>编译过程又分为编译与汇编。</p>
