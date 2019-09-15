@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    ARM基础 | Haitao Space
+    linux基础 | Haitao Space
   </title>
   <meta name="description" content="Stay hungry, stay foolish.">
   
   <meta name="keywords" content="
-  ARM
+  linux
   ">
   
   <meta name="author" content="haitaoW">
@@ -128,32 +128,40 @@
     <i class="fa fa-user-o"></i>
     haitaoW
 
-    <span class="post-date float-right" title="{{moment(1564878561000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1564842750000).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1564878561000).fromNow()}}
+      {{moment(1564842750000).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>ARM基础</h1>
-    <h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a><strong>目录：</strong></h3><ol>
-<li>ARM指令和Thumb指令</li>
+    <h1>linux基础</h1>
+    <blockquote>
+<h3 id="linux基础"><a href="#linux基础" class="headerlink" title="linux基础"></a>linux基础</h3><ol>
+<li><p><strong>Linux中断实现机制和中断对外设时序间隙的影响、中断中不能用延时的原因</strong></p>
+</li>
+<li><h6 id="linux-内核态与用户态"><a href="#linux-内核态与用户态" class="headerlink" title="linux 内核态与用户态"></a>linux 内核态与用户态</h6></li>
+<li><p>linux多线程与多进程通信</p>
+</li>
 </ol>
-<h3 id="ARM指令和Thumb指令"><a href="#ARM指令和Thumb指令" class="headerlink" title="ARM指令和Thumb指令"></a>ARM指令和Thumb指令</h3><ol>
-<li><strong>ARM</strong>状态：arm处理器处于32位指令的状态，所有的指令均为32位；</li>
-<li><strong>thumb状态</strong>：arm执行16位指令的状态，即为16位状态</li>
-<li><strong>thumb-2 状态</strong>: ARM7版本具有的新状态，兼有16位以及32位指令，实现了更高性能更有效的功耗与极少的占用内存。</li>
-<li><strong>调试状态</strong>： 处理器停机进入调试状态</li>
-<li><strong>ARM状态与thumb状态的切换</strong>：状态将寄存器的最低位设置为1 ：arm-&gt;thumb ; 0:  thumb-&gt;arm </li>
+</blockquote>
+<h3 id="linxu关键字："><a href="#linxu关键字：" class="headerlink" title="linxu关键字："></a>linxu关键字：</h3><h4 id="1-grep命令："><a href="#1-grep命令：" class="headerlink" title="1. grep命令："></a>1. grep命令：</h4><p>​    grep（global regular expression print）命令是一种强大的文本搜索工具，他能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
+<p>​    <strong>命令格式 grep [option] pattern files</strong></p>
+<p>​    <strong>使用示例</strong></p>
+<pre><code>1. 查看指定进程             `ps -ef|grep svn`
+2. 查看进程个数           `ps -ef|grep svn -c`
+3. 文件中读取关键词进行搜索    `cat test.txt | grep -f test2.txt`  //输出test.txt文件中含有从test2.txt文件中读取出的关键词的内容行，并显示每一行的行号</code></pre><ol start="4">
+<li>在文件中查找关键字  <code>grep &#39;linux&#39; test.txt</code></li>
+<li>找到以u开头的内容 <code>cat test.txt |grep ^u</code></li>
 </ol>
-<p>ARM状态与thumb状态的本质区别是指令集的位数不同，ARM是32位的指令集，而thumb是16位的指令集，thrumb-2 是arm与thumb状态的结合与优化。</p>
-<p><strong>注意</strong>:</p>
+<h4 id="2-Q：linux-中的文件-目录权限设置命令"><a href="#2-Q：linux-中的文件-目录权限设置命令" class="headerlink" title="2. Q：linux 中的文件/目录权限设置命令"></a>2. Q：linux 中的文件/目录权限设置命令</h4><p>​    <strong>A :  chmod</strong></p>
+<h4 id="linux多线程与多进程通信"><a href="#linux多线程与多进程通信" class="headerlink" title="linux多线程与多进程通信"></a>linux多线程与多进程通信</h4><p>参考网址：</p>
 <ol>
-<li>Cortex-M3只有Thumb-2状态和调试状态；</li>
-<li>ARM处理器复位之后开始执行的代码总是只是出于ARM状态；</li>
-<li>有Thumb-2 就无须thumb ，也不需要与ARM状态进行切换。</li>
+<li><a href="https://songlee24.github.io/2015/04/21/linux-IPC/" target="_blank" rel="noopener">https://songlee24.github.io/2015/04/21/linux-IPC/</a></li>
+<li><a href="https://blog.csdn.net/gatieme/article/details/50908749" target="_blank" rel="noopener">https://blog.csdn.net/gatieme/article/details/50908749</a></li>
+<li><a href="https://www.cnblogs.com/LUO77/p/5816326.html" target="_blank" rel="noopener">https://www.cnblogs.com/LUO77/p/5816326.html</a></li>
 </ol>
-
+<h4 id="linux下的锁机制"><a href="#linux下的锁机制" class="headerlink" title="linux下的锁机制"></a>linux下的锁机制</h4>
   </article>
 </div>
 
