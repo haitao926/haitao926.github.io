@@ -88,19 +88,19 @@
         <a href="/archives" class="header-toolbar-left"><i
                   class="fa fa-file-text"></i> Posts </a>
         <a href="/archives"
-           class="header-toolbar-right"> 10 </a>
+           class="header-toolbar-right"> 8 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i
                   class="fa fa-tags"></i> Tags </a>
         <a href="/tags"
-           class="header-toolbar-right"> 8 </a>
+           class="header-toolbar-right"> 6 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i
                   class="fa fa-folder-open"></i> Categories </a>
         <a href="/categories"
-           class="header-toolbar-right"> 5 </a>
+           class="header-toolbar-right"> 3 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -201,7 +201,7 @@
 </tr>
 </tbody></table>
 <p>同步与异步的区别：异步是需要等待的，同步是指及时响应 的问题。</p>
-<h3 id="协议：TCP与UDP"><a href="#协议：TCP与UDP" class="headerlink" title="协议：TCP与UDP"></a>协议：TCP与UDP</h3><p>TCP/IP协议是一个协议簇。里面包括很多协议。UDP只是其中的一个。之所以命名为TCP/IP协议，因为TCP,IP协议是两个很重要的协议，就用他两命名了。</p>
+<h4 id="协议：TCP与UDP"><a href="#协议：TCP与UDP" class="headerlink" title="协议：TCP与UDP"></a>协议：TCP与UDP</h4><p>TCP/IP协议是一个协议簇。里面包括很多协议。UDP只是其中的一个。之所以命名为TCP/IP协议，因为TCP,IP协议是两个很重要的协议，就用他两命名了。</p>
 <p>TCP（Transmission Control Protocol，传输控制协议）是面向连接的协议。</p>
 <p><img src="https://img-blog.csdn.net/20170516204339754?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTk1Nzc1OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></p>
 </li>
@@ -209,7 +209,7 @@
 <p><strong>TCP的三次握手</strong></p>
 <ol>
 <li>主机A通过向主机B发送一个含有同步序列号（SYN）的标志位的数据段给主机B，向主机B请求建立连接，用过这个数据段，主机A告诉主机B我想要和你通信；你可以用哪个序列号作为作为起始数据段来回应我。</li>
-<li>主机B收到主机A的请求后，用一个带有确认应答的（ACK）和同步序列号的（SYN）标志位的数据段响应主机A也告诉他两件事：1. 我已经接收你的请求了你可以传输数据了，你要用哪个序列号作为起始数据段来回应我。</li>
+<li>主机B收到主机A的请求后，用   一个带有确认应答的（ACK）和同步序列号的（SYN）标志位的数据段响应主机A也告诉他两件事：1. 我已经接收你的请求了你可以传输数据了，你要用哪个序列号作为起始数据段来回应我。</li>
 <li>主机A接收到这个数据段后，在发送一个确认应答，确认已收到主机B的数据段。我已经收到回复，我现在要开始传输数据了。</li>
 </ol>
 <p><strong>TCP的四次挥手</strong></p>
